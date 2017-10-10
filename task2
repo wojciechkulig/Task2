@@ -1,0 +1,2 @@
+select XF.Country.name from XF.Country join XF.City ON (XF.Country.CountryID = XF.City.CountryID) GROUP BY XF.Country.name HAVING sum(XF.City.Population) > 400 ORDER BY XF.Country.name;
+select XF.Country.name from XF.Country join XF.City ON (XF.Country.CountryId = XF.City.CountryID) LEFT OUTER JOIN XF.Building ON (XF.City.CityID = XF.Building.CityID) GROUP BY XF.Country.name HAVING count(XF.Building.BuildingID) = 0 ORDER BY XF.Country.name;
